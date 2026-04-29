@@ -58,4 +58,10 @@ function swapNums(num1:number, num2:number) : [number, number] {
 
 swapNumbers = swapNums(10,20);
 
-console.log(swapNumbers[2]);
+// console.log(swapNumbers[2]);
+
+// ANY
+let department: any;
+department = "IT";
+department = 10;
+

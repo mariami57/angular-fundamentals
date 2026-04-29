@@ -32,4 +32,8 @@ function swapNums(num1, num2) {
     return [num2, num1];
 }
 swapNumbers = swapNums(10, 20);
-console.log(swapNumbers[2]);
+// console.log(swapNumbers[2]);
+// ANY
+let department;
+department = "IT";
+department = 10;
