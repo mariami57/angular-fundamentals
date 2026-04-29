@@ -31,8 +31,8 @@ function getItems<Type>(items: Type[]): Type[] {
     return new Array<Type>().concat(items);
 }
 
-let concatNumbers = getItems([1,[2,3],4,5]);
-let concatStrings = getItems(['a', ['b', 'c'], 'd']);
+let concatNumbers = getItems([1,2,3,4,5]);
+let concatStrings = getItems(['a', 'b', 'c', 'd']);
 
 console.log(concatNumbers);
 console.log(concatStrings);
