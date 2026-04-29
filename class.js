@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Employee {
     #id;
     name;
@@ -17,6 +18,9 @@ class Employee {
         this.name = name;
         this.address = address;
     }
+    login() {
+        return { name: "John", id: 1, email: "" };
+    }
     getNameWithAdress() {
         return `${this.name} lives at ${this.address}`;
     }
@@ -29,12 +33,22 @@ class Manager extends Employee {
         return `${this.name} is a manager at ${this.address}`;
     }
 }
-let john = new Employee(1, "John", "Highway 71");
+let john = new Employee(1, "John", {
+    street: "Highway",
+    city: "London",
+    state: "UK",
+    pin: "4512"
+});
 john.empId = 100;
 console.log(john.empId);
 Employee.getEmployeeCount();
 let a = john.getNameWithAdress();
-let mike = new Manager(2, "Mike", "Another road");
+let mike = new Manager(2, "Mike", {
+    street: "Another road",
+    city: "Bane",
+    state: "UK",
+    pin: "47512"
+});
 let ma = mike.getNameWithAdress();
 console.log(john);
 console.log(ma);
