@@ -3,8 +3,9 @@
         <span routerLink="/">{{title()}}</span>
         <!-- Old way of using variables in Angular templates, now we need to call the signal as a function: -->
         <!-- {{title}} -->  
-        <ul>
+        <ul class="flex justify-between gap-4">
             <li routerLink="/todos">Todos</li>
+            <li routerLink="/rooms">Rooms</li>
         </ul> 
     </nav>
 </header>

@@ -1,0 +1,12 @@
+@for (room of roomList(); track room.roomNumber) {
+ 
+    <div class="my-2">
+        <p>Room number: {{ room.roomNumber }}</p>
+        <p>Amenities: {{ room.amenities?.join(', ') }}</p>
+        <p>Rating: {{ room.rating }}</p>
+        <p>Price: ${{ room.price }}</p>
+    </div>
+
+
+
+}
