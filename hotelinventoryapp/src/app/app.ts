@@ -10,15 +10,15 @@ import { Header } from './components/header/header';
   // templateUrl: './app.html',
   template: `
     <app-header></app-header>
-    <app-home></app-home>
-    <h1>Welcome to Maria's first Angular App!</h1>
-    <p>Hello world!</p>
+    <main>
+      <app-home></app-home>
+    </main>
     <router-outlet></router-outlet>
   `,
   // styleUrl: './app.css'
   styles: `
-    h1 {
-      color: #ff4081;
+    main {
+      padding: 16px;
     }
   `
 })
