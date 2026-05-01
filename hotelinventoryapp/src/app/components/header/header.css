@@ -1,0 +1,12 @@
+header {
+    span:hover {
+        cursor: pointer;
+        color: rgb(134, 134, 134);
+    }
+    ul {
+        li:hover{
+            cursor:pointer;
+            color:  rgb(134, 134, 134);
+        }
+    }
+}
