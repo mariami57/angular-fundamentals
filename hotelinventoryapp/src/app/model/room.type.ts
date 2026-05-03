@@ -3,6 +3,7 @@ export type Room = {
     price?: number;
     rating?: number;   
     roomNumber: string;
+    photo?: string;
 }
 
 export type RoomsInfo = {

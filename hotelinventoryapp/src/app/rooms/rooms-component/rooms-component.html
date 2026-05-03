@@ -1,12 +1,28 @@
-@for (room of roomList(); track room.roomNumber) {
- 
-    <div class="my-2">
+<!-- Data binding: Interpolation -->
+<h1>{{ hotelName}} </h1>
+
+<div class="flex gap-4">
+
+    @for (room of roomList(); track room.roomNumber) {
+
+    <div class="my-4 p-4 w-1/4 border-gray-300 rounded shadow">
+        <!-- Data binding: Interpolation -->
         <p>Room number: {{ room.roomNumber }}</p>
         <p>Amenities: {{ room.amenities?.join(', ') }}</p>
         <p>Rating: {{ room.rating }}</p>
         <p>Price: ${{ room.price }}</p>
+        <!-- Data binding: Property binding -->
+        <img [src]="room.photo" alt="Room photo" class="w-32 h-24 object-cover">
+        <!-- Data binding: Event binding -->
+        <button (click)=bookRoom() class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Book Now</button>
     </div>
 
 
+    }
 
-}
+</div>
+
+
+<p>Leave us a message:</p>
+<input type="text" [(ngModel)]="message" placeholder="Your message here" class="border p-2 w-100">
+<p>{{ message }}</p>

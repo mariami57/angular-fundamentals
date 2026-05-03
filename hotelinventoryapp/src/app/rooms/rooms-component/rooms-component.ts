@@ -1,15 +1,17 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Room } from '../../model/room.type';
 import { RoomService } from '../../services/room-service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-rooms-component',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './rooms-component.html',
   styleUrl: './rooms-component.css',
 })
 export class RoomsComponent implements OnInit {
-  hotelName = 'Hilton Hotel';
+  hotelName:string = 'Hilton Hotel';
   numberOfRooms = 10;
   hideRooms = false;
 
@@ -25,4 +27,10 @@ export class RoomsComponent implements OnInit {
     this.roomList.set(this.roomService.RoomList);
   }
 
+  bookRoom() {
+    alert('Room booked successfully!');
+  }
+
+  message: string = '';
+  
 }
