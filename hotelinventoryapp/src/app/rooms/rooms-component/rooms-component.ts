@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class RoomsComponent implements OnInit {
   hotelName:string = 'Hilton Hotel';
-  numberOfRooms = 10;
+  numberOfRooms:number = 0;
   hideRooms = false;
 
   room: Room = {
@@ -24,7 +24,10 @@ export class RoomsComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.numberOfRooms = 10;
     this.roomList.set(this.roomService.RoomList);
+
+
   }
 
   bookRoom() {

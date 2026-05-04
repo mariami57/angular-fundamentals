@@ -1,4 +1,9 @@
 @for (item of todoItems(); track item.id) {
-    <p>{{ item.title }}</p>
+    <app-todo-item [todo]="item" (completed)="markComplete($event)"/>
+    
+
 }
+
+<h3>Completed</h3>
+<app-completed-items-list-component [completedItems]="completedItems()" />
   

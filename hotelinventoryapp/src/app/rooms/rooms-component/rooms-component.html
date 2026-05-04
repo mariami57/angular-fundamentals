@@ -1,5 +1,6 @@
 <!-- Data binding: Interpolation -->
 <h1>{{ hotelName}} </h1>
+<h2>Number of Rooms: {{ numberOfRooms }}</h2>
 
 <div class="flex gap-4">
 
@@ -14,7 +15,7 @@
         <!-- Data binding: Property binding -->
         <img [src]="room.photo" alt="Room photo" class="w-32 h-24 object-cover">
         <!-- Data binding: Event binding -->
-        <button (click)=bookRoom() class="bg-blue-500 text-white px-4 py-2 rounded mt-2">Book Now</button>
+        <button (click)=bookRoom() class="btn">Book Now</button>
     </div>
 
 

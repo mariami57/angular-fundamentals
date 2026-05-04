@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { Todo } from '../../model/todo.type';
 
 @Component({
   selector: 'app-todo-item',
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './todo-item.html',
   styleUrl: './todo-item.css',
 })
-export class TodoItem {}
+export class TodoItem {
+  todo = input.required<Todo>();
+  completed = output<Todo>();
+
+  markComplete(){
+    this.completed.emit({...this.todo(), completed: true});
+  }
+}
