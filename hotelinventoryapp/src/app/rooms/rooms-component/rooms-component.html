@@ -27,3 +27,6 @@
 <p>Leave us a message:</p>
 <input type="text" [(ngModel)]="message" placeholder="Your message here" class="border p-2 w-100">
 <p>{{ message }}</p>
+
+<h3>Available Rooms</h3>
+<app-available-rooms-component [availableRooms]="availableRooms()" />

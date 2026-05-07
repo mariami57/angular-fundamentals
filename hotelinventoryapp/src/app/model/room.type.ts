@@ -4,6 +4,7 @@ export type Room = {
     rating?: number;   
     roomNumber: string;
     photo?: string;
+    available: boolean;
 }
 
 export type RoomsInfo = {

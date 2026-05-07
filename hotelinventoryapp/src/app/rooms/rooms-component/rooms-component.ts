@@ -1,12 +1,12 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, input, OnInit, output, signal } from '@angular/core';
 import { Room } from '../../model/room.type';
 import { RoomService } from '../../services/room-service';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AvailableRoomsComponent } from '../available-rooms-component/available-rooms-component';
 
 @Component({
   selector: 'app-rooms-component',
-  imports: [FormsModule],
+  imports: [FormsModule, AvailableRoomsComponent],
   templateUrl: './rooms-component.html',
   styleUrl: './rooms-component.css',
 })
@@ -17,10 +17,12 @@ export class RoomsComponent implements OnInit {
 
   room: Room = {
     roomNumber: '101',
+    available: false,
   }
 
   roomService = inject(RoomService);
   roomList= signal<Room[]> ([]);
+  availableRooms = computed(() => this.roomList().filter(r => r.available));
   
 
   ngOnInit(): void {
@@ -35,5 +37,7 @@ export class RoomsComponent implements OnInit {
   }
 
   message: string = '';
+
+  
   
 }
