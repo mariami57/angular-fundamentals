@@ -4,7 +4,7 @@
 
 <div class="flex gap-4">
 
-    @for (room of roomList(); track room.roomNumber) {
+    @for (room of roomService.RoomList(); track room.roomNumber) {
 
     <div class="my-4 p-4 w-1/4 border-gray-300 rounded shadow">
         <!-- Data binding: Interpolation -->
@@ -29,4 +29,4 @@
 <p>{{ message }}</p>
 
 <h3>Available Rooms</h3>
-<app-available-rooms-component [availableRooms]="availableRooms()" />
+<app-available-rooms-component [availableRooms]="roomService.availableRooms()" />

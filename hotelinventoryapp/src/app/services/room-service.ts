@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Room } from '../model/room.type';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class RoomService {
     { roomNumber: '104', rating: 3.5, amenities: ['Wi-Fi'], price: 100, photo: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400', available: false },
   ]);
 
-  
+  availableRooms = computed(() => this.RoomList().filter(r => r.available));
   
   
 }

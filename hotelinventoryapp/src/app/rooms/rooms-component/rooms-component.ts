@@ -21,13 +21,12 @@ export class RoomsComponent implements OnInit {
   }
 
   roomService = inject(RoomService);
-  roomList= signal<Room[]> ([]);
-  availableRooms = computed(() => this.roomList().filter(r => r.available));
+
+  
   
 
   ngOnInit(): void {
     this.numberOfRooms = 10;
-    this.roomList.set(this.roomService.RoomList);
 
 
   }
