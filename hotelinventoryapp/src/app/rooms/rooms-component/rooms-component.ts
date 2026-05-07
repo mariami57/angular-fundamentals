@@ -23,7 +23,6 @@ export class RoomsComponent implements OnInit {
   roomService = inject(RoomService);
 
   
-  
 
   ngOnInit(): void {
     this.numberOfRooms = 10;
@@ -40,3 +39,4 @@ export class RoomsComponent implements OnInit {
   
   
 }
+
