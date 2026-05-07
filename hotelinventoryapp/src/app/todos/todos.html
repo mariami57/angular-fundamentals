@@ -1,12 +1,12 @@
-@for (item of todoItems(); track item.id) {
+@for (item of todoService.todoItems(); track item.id) {
     <app-todo-item [todo]="item" (completed)="markComplete($event)"/>
     
 
 }
 
 <h3>Completed</h3>
-<app-completed-items-list-component [completedItems]="completedItems()" />
+<app-completed-items-list-component [completedItems]="todoService.completedItems()" />
 
 <h3>High Priority</h3>
-<app-high-priority-todos-component [highPriorityTodos]="highPriorityTodos()" />
+<app-high-priority-todos-component [highPriorityTodos]="todoService.highPriorityTodos()" />
   

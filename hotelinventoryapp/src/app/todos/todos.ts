@@ -11,23 +11,14 @@ import { HighPriorityTodosComponent } from './high-priority-todos-component/high
   templateUrl: './todos.html',
   styleUrl: './todos.css',
 })
-export class Todos implements OnInit {
+export class Todos {
   todoService = inject(TodosService);
-  todoItems = signal<Array<Todo>>([]);
-
-  completedItems = computed(() =>
-    this.todoItems().filter(t => t.completed));
+  
 
   markComplete(todo: Todo) {
-    this.todoItems.update(items => 
+    this.todoService.todoItems.update(items => 
       items.map(t => t.id === todo.id ? { ...t, completed: true} : t)
      );
   }
 
-  highPriorityTodos = computed(() => this.todoItems().filter(t => t.priority === 'high'));
-
-  ngOnInit(): void {
-    console.log(this.todoService.todoItems);
-    this.todoItems.set(this.todoService.todoItems);
-  }
 }
