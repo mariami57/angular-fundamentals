@@ -1,3 +1,9 @@
+<ul class="flex justify-between gap-4 rooms-header p-4 m-0">
+    <li routerLink="/rooms/available-rooms">Available Rooms</li>
+    <li routerLink="/rooms/booked-rooms">Booked Rooms</li>
+</ul> 
+
+
 <!-- Data binding: Interpolation -->
 <h1>{{ hotelName}} </h1>
 <h2>Number of Rooms: {{ numberOfRooms }}</h2>
@@ -28,8 +34,4 @@
 <input type="text" [(ngModel)]="message" placeholder="Your message here" class="border p-2 w-100">
 <p>{{ message }}</p>
 
-<h3>Available Rooms</h3>
-<app-available-rooms-component [availableRooms]="roomService.availableRooms()" />
-
-<h3>Booked Rooms</h3>
-<app-booked-rooms-component [bookedRooms]="roomService.bookedRooms()" />
+<router-outlet />

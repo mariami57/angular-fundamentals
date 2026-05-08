@@ -1,0 +1,9 @@
+.rooms-header {
+    background-color: rgb(0, 102, 255);
+}
+
+.rooms-header li:hover {
+            cursor:pointer;
+            color:  rgb(134, 134, 134);
+
+}

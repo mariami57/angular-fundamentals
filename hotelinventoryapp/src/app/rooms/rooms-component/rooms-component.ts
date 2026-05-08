@@ -4,11 +4,12 @@ import { RoomService } from '../../services/room-service';
 import { FormsModule } from '@angular/forms';
 import { AvailableRoomsComponent } from '../available-rooms-component/available-rooms-component';
 import { BookedRoomsComponent } from '../booked-rooms-component/booked-rooms-component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-rooms-component',
-  imports: [FormsModule, AvailableRoomsComponent, BookedRoomsComponent],
+  imports: [FormsModule, AvailableRoomsComponent, BookedRoomsComponent, RouterOutlet, RouterLink],
   templateUrl: './rooms-component.html',
   styleUrl: './rooms-component.css',
 })

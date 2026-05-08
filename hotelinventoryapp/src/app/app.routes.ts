@@ -12,6 +12,19 @@ export const routes: Routes = [
     },
     {
         path: 'rooms',
-        loadComponent: () => import('./rooms/rooms-component/rooms-component').then(m => m.RoomsComponent)
+        loadComponent: () => import('./rooms/rooms-component/rooms-component').then(m => m.RoomsComponent),
+        children: [
+            {   
+                path: 'available-rooms',
+                loadComponent: () => import('./rooms/available-rooms-component/available-rooms-component').then(m => m.AvailableRoomsComponent),
+
+            },
+
+            {   
+                path: 'booked-rooms',
+                loadComponent: () => import('./rooms/booked-rooms-component/booked-rooms-component').then(m => m.BookedRoomsComponent),
+
+            }
+        ]
     }
 ];
