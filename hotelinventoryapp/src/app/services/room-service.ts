@@ -13,6 +13,7 @@ export class RoomService {
   ]);
 
   availableRooms = computed(() => this.RoomList().filter(r => r.available));
+  bookedRooms = computed(() => this.RoomList().filter(r => !r.available));
   
   
 }

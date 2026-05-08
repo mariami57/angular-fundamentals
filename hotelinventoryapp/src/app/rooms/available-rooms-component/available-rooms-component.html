@@ -1,6 +1,6 @@
 @for (room of availableRooms(); track room.roomNumber) {
    
-    <p>{{ room.roomNumber }} - ${{room.price}}</p>
+    <p>{{ room.roomNumber }} - {{room.price | currency}}</p>
     
 }
 

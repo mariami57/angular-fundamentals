@@ -1,0 +1,6 @@
+@for (room of bookedRooms(); track room.roomNumber) {
+  <div class="booked-room">
+    <p>{{ room.roomNumber }} - {{room.price | currency}}</p>
+  </div>
+    
+}
