@@ -1,3 +1,5 @@
 @for (item of todoService.highPriorityTodos(); track item.id) {
-    <p>✓ {{ item.title }}</p>
+    @if (!item.completed) {
+        <p> {{ item.title }}</p>
+    }
 }

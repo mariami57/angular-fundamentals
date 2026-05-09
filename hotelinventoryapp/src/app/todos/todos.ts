@@ -12,5 +12,15 @@ export class Todos {
   selectedView: string ='';
   todoService = inject(TodosService);
 
+  markAsCompleted(id: number) {
+    const updatedTodos = this.todoService.todoItems().map(todo => {
+      if (todo.id === id) {
+        return { ...todo, completed: true };
+      }
+      return todo;
+    });
+    this.todoService.todoItems.set(updatedTodos);
+  }
+
 
 }

@@ -10,6 +10,9 @@
             <p>Task: {{ item.title }}</p>
             <p>Priority: {{ item.priority }}</p>
             <p>Status: {{ item.completed ? 'Completed' : 'Pending' }}</p>
+            @if(!item.completed) {
+                <button (click)="todoService.markComplete(item)" class="mt-2 px-4 py-2 bg-green-500 text-white rounded">Mark as Complete</button>
+            }
         </div>
     }
 

@@ -8,7 +8,18 @@ export const routes: Routes = [
     },
     {
         path: 'todos',
-        loadComponent: () => import('./todos/todos').then(m => m.Todos)
+        loadComponent: () => import('./todos/todos').then(m => m.Todos),
+        children: [
+            {
+                path: 'completed-items',
+                loadComponent: () => import('./components/completed-items-list-component/completed-items-list-component').then(m => m.CompletedItemsListComponent),
+                
+            },
+            {
+                path: 'high-priority',
+                loadComponent: () => import('./todos/high-priority-todos-component/high-priority-todos-component').then(m => m.HighPriorityTodosComponent),
+            }
+        ]
     },
     {
         path: 'rooms',
