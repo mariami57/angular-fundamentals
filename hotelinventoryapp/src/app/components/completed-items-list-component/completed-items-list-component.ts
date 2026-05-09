@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Todo } from '../../model/todo.type';
+import { TodosService } from '../../services/todos';
 
 @Component({
   selector: 'app-completed-items-list-component',
@@ -8,5 +9,5 @@ import { Todo } from '../../model/todo.type';
   styleUrl: './completed-items-list-component.css',
 })
 export class CompletedItemsListComponent {
-  completedItems = input.required<Todo[]>();
+  todoService = inject(TodosService);
 }

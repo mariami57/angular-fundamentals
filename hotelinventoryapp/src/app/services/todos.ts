@@ -12,6 +12,7 @@ export class TodosService {
     {title: 'Todo 4',completed: false,userId: 1,id: 4,priority: 'high'}
   ]);
 
+
   completedItems = computed(() =>
   this.todoItems().filter(t => t.completed));
 

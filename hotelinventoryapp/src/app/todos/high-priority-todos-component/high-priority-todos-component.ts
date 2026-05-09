@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { TodosService } from '../../services/todos';
 import { Todo } from '../../model/todo.type';
 
 @Component({
@@ -8,5 +9,11 @@ import { Todo } from '../../model/todo.type';
   styleUrl: './high-priority-todos-component.css',
 })
 export class HighPriorityTodosComponent {
-  highPriorityTodos = input.required<Todo[]>();
+  todoService = inject(TodosService);
+
+  markComplete(todo: Todo) {
+    this.todoService.todoItems.update(items =>
+      items.map(t => t.id === todo.id ? { ...t, completed: true } : t)
+    );
+  }
 }

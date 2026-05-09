@@ -1,12 +1,19 @@
-@for (item of todoService.todoItems(); track item.id) {
-    <app-todo-item [todo]="item" (completed)="markComplete($event)"/>
-    
+<ul class="flex justify-between rooms-header p-2 m-0 rounded-md">
+    <li (click)="selectedView = 'completed'" routerLink="/todos/completed-items">Completed Items</li>
+    <li (click)="selectedView = 'high-priority'" routerLink="/todos/high-priority">High Priority Items</li>
+    <li (click)="selectedView = ''" routerLink="/todos">All Tasks</li>
+</ul>
+
+@if (selectedView === '') {
+    @for (item of todoService.todoItems(); track item.id) {
+        <div class="my-4 p-4 w-full border-gray-300 rounded shadow">
+            <p>Task: {{ item.title }}</p>
+            <p>Priority: {{ item.priority }}</p>
+            <p>Status: {{ item.completed ? 'Completed' : 'Pending' }}</p>
+        </div>
+    }
+
 
 }
 
-<h3>Completed</h3>
-<app-completed-items-list-component [completedItems]="todoService.completedItems()" />
-
-<h3>High Priority</h3>
-<app-high-priority-todos-component [highPriorityTodos]="todoService.highPriorityTodos()" />
-  
+<router-outlet></router-outlet>

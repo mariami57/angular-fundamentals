@@ -1,9 +1,7 @@
-import { Component, computed, inject, input, OnInit, output, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Room } from '../../model/room.type';
 import { RoomService } from '../../services/room-service';
 import { FormsModule } from '@angular/forms';
-import { AvailableRoomsComponent } from '../available-rooms-component/available-rooms-component';
-import { BookedRoomsComponent } from '../booked-rooms-component/booked-rooms-component';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 
