@@ -9,11 +9,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-rooms-component',
-  imports: [FormsModule, AvailableRoomsComponent, BookedRoomsComponent, RouterOutlet, RouterLink],
+  imports: [FormsModule, RouterOutlet, RouterLink],
   templateUrl: './rooms-component.html',
   styleUrl: './rooms-component.css',
 })
 export class RoomsComponent implements OnInit {
+
+  selectedView: string ='';
   hotelName:string = 'Hilton Hotel';
   numberOfRooms:number = 0;
   hideRooms = false;

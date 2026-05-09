@@ -1,9 +1,10 @@
-<ul class="flex justify-between gap-4 rooms-header p-4 m-0">
-    <li routerLink="/rooms/available-rooms">Available Rooms</li>
-    <li routerLink="/rooms/booked-rooms">Booked Rooms</li>
-</ul> 
+<ul class="flex justify-between rooms-header p-2 m-0 rounded-md">
+    <li (click)="selectedView = 'available'" routerLink="/rooms/available-rooms">Available Rooms</li>
+    <li (click)="selectedView = 'booked'" routerLink="/rooms/booked-rooms">Booked Rooms</li>
+    <li (click)="selectedView = ''" routerLink="/rooms">All Rooms</li>
+</ul>
 
-
+@if (!selectedView) {
 <!-- Data binding: Interpolation -->
 <h1>{{ hotelName}} </h1>
 <h2>Number of Rooms: {{ numberOfRooms }}</h2>
@@ -21,7 +22,9 @@
         <!-- Data binding: Property binding -->
         <img [src]="room.photo" alt="Room photo" class="w-32 h-24 object-cover">
         <!-- Data binding: Event binding -->
+        @if(room.available) {
         <button (click)=bookRoom() class="btn">Book Now</button>
+        }
     </div>
 
 
@@ -29,9 +32,10 @@
 
 </div>
 
+}
 
+
+<router-outlet />
 <p>Leave us a message:</p>
 <input type="text" [(ngModel)]="message" placeholder="Your message here" class="border p-2 w-100">
 <p>{{ message }}</p>
-
-<router-outlet />

@@ -1,5 +1,6 @@
 .rooms-header {
-    background-color: rgb(0, 102, 255);
+    background-color: #1e2939;
+    color: white;
 }
 
 .rooms-header li:hover {

@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Room } from '../../model/room.type';
 import { CurrencyPipe } from '@angular/common';
+import { RoomService } from '../../services/room-service';
 
 @Component({
   selector: 'app-booked-rooms-component',
@@ -9,5 +10,5 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './booked-rooms-component.css',
 })
 export class BookedRoomsComponent {
-  bookedRooms = input.required<Room[]>();
+  roomService = inject(RoomService);
 }

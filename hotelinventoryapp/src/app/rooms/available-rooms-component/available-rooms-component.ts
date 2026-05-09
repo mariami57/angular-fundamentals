@@ -1,6 +1,7 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { Room } from '../../model/room.type';
 import { CurrencyPipe } from '@angular/common';
+import { RoomService } from '../../services/room-service';
 
 @Component({
   selector: 'app-available-rooms-component',
@@ -9,7 +10,11 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './available-rooms-component.css',
 })
 export class AvailableRoomsComponent {
-  availableRooms = input.required<Room[]>();
+  roomService = inject(RoomService);
+
+  bookRoom() {
+    alert('Room booked successfully!');
+  }
   
 }
 

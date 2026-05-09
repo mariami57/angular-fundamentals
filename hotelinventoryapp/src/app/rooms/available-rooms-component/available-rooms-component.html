@@ -1,6 +1,18 @@
-@for (room of availableRooms(); track room.roomNumber) {
-   
-    <p>{{ room.roomNumber }} - {{room.price | currency}}</p>
-    
-}
+<div class="flex gap-4">
+    @for (room of roomService.availableRooms(); track room.roomNumber) {
 
+    <div class="my-4 p-4 w-1/4 border-gray-300 rounded shadow">
+        <!-- Data binding: Interpolation -->
+        <p>Room number: {{ room.roomNumber }}</p>
+        <p>Amenities: {{ room.amenities?.join(', ') }}</p>
+        <p>Rating: {{ room.rating }}</p>
+        <p>Price: ${{ room.price }}</p>
+        <!-- Data binding: Property binding -->
+        <img [src]="room.photo" alt="Room photo" class="w-32 h-24 object-cover">
+        <!-- Data binding: Event binding -->
+        <button (click)=bookRoom() class="btn">Book Now</button>
+    </div>
+
+    }
+
+</div>
